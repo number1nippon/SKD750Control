@@ -1,0 +1,245 @@
+Thank you for providing the list of capabilities for your Nikon D750 camera. Based on this list, I can help you understand how to use these capabilities and commands in your application.
+Here is a summary of the capabilities and their types:
+
+1.	Callback Capabilities:
+
+•	kNkMAIDCapability_ProgressProc
+•	kNkMAIDCapability_EventProc
+
+2.	Boolean Capabilities:
+
+•	kNkMAIDCapability_IsAlive
+•	kNkMAIDCapability_LockFocus
+•	kNkMAIDCapability_LockExposure
+•	kNkMAIDCapability_ApertureDial
+•	kNkMAIDCapability_LockCamera
+•	kNkMAIDCapability_IsoControl
+•	kNkMAIDCapability_NoiseReduction
+•	kNkMAIDCapability_EnableComment
+•	kNkMAIDCapability_LockFV
+•	kNkMAIDCapability_EnableBracketing
+•	kNkMAIDCapability_InfoDisplayErrStatus
+•	kNkMAIDCapability_CameraInclinationMode
+•	kNkMAIDCapability_EnableCopyright
+•	kNkMAIDCapability_RetractableLensWarningStatus
+•	kNkMAIDCapability_MovieISOControl
+•	kNkMAIDCapability_RawJpegTransferStatus
+•	kNkMAIDCapability_MovieAutoDXCrop
+
+3.	Enum Capabilities:
+
+•	kNkMAIDCapability_Children
+•	kNkMAIDCapability_FlashMode
+•	kNkMAIDCapability_EVInterval
+•	kNkMAIDCapability_CompressionLevel
+•	kNkMAIDCapability_ExposureMode
+•	kNkMAIDCapability_ShutterSpeed
+•	kNkMAIDCapability_Aperture
+•	kNkMAIDCapability_Sensitivity
+•	kNkMAIDCapability_WBMode
+•	kNkMAIDCapability_FocusAreaMode
+•	kNkMAIDCapability_FocusPreferredArea
+•	kNkMAIDCapability_BracketingOrder
+•	kNkMAIDCapability_BracketingVary
+•	kNkMAIDCapability_AFAreaSelector
+•	kNkMAIDCapability_AFsPriority
+•	kNkMAIDCapability_AFcPriority
+•	kNkMAIDCapability_WBPresetNumber
+•	kNkMAIDCapability_SensitivityInterval
+•	kNkMAIDCapability_ImageSize
+•	kNkMAIDCapability_InternalSplMode
+•	kNkMAIDCapability_ShootingMode
+•	kNkMAIDCapability_BracketingType
+•	kNkMAIDCapability_AEBracketingStep
+•	kNkMAIDCapability_WBBracketingStep
+•	kNkMAIDCapability_ExternalNewTypeFlashMode
+•	kNkMAIDCapability_ChangedPictureControl
+•	kNkMAIDCapability_LiveViewImageZoomRate
+•	kNkMAIDCapability_LiveViewExposurePreview
+•	kNkMAIDCapability_LiveViewSelector
+•	kNkMAIDCapability_MovieShutterSpeed
+•	kNkMAIDCapability_MovieAperture
+•	kNkMAIDCapability_MovieSensitivity
+•	kNkMAIDCapability_MovieReleaseButton
+•	kNkMAIDCapability_LiveViewImageSize
+•	kNkMAIDCapability_MovieWBMode
+•	kNkMAIDCapability_MoviePictureControl
+•	kNkMAIDCapability_ChangedMoviePictureControl
+•	kNkMAIDCapability_MovieMeteringMode
+
+4.	String Capabilities:
+
+•	kNkMAIDCapability_Name
+•	kNkMAIDCapability_Interface
+•	kNkMAIDCapability_LensInfo
+•	kNkMAIDCapability_UserComment
+•	kNkMAIDCapability_ArtistName
+•	kNkMAIDCapability_CopyrightInfo
+
+5.	Unsigned Capabilities:
+
+•	kNkMAIDCapability_DataTypes
+•	kNkMAIDCapability_MeteringMode
+•	kNkMAIDCapability_FocusMode
+•	kNkMAIDCapability_RemainContinuousShooting
+•	kNkMAIDCapability_ContinuousShootingNum
+•	kNkMAIDCapability_BracketingCount
+•	kNkMAIDCapability_CameraInclination
+•	kNkMAIDCapability_ExternalFlashSort
+•	kNkMAIDCapability_InternalFlashStatus
+•	kNkMAIDCapability_ExternalFlashStatus
+•	kNkMAIDCapability_AFMode
+•	kNkMAIDCapability_ISOAutoShutterTime
+•	kNkMAIDCapability_CCDDataMode
+•	kNkMAIDCapability_JpegCompressionPolicy
+•	kNkMAIDCapability_CameraType
+•	kNkMAIDCapability_NoiseReductionHighISO
+•	kNkMAIDCapability_ImageColorSpace
+•	kNkMAIDCapability_ISOAutoHiLimit
+•	kNkMAIDCapability_Slot2ImageSaveMode
+•	kNkMAIDCapability_CompressRAWBitMode
+•	kNkMAIDCapability_Active_D_Lighting
+•	kNkMAIDCapability_LiveViewStatus
+•	kNkMAIDCapability_ContrastAF
+•	kNkMAIDCapability_CompressRAWEx
+•	kNkMAIDCapability_WBFluorescentType
+•	kNkMAIDCapability_AFAreaPoint
+•	kNkMAIDCapability_ManualSetLensNo
+•	kNkMAIDCapability_LensType
+•	kNkMAIDCapability_LiveViewProhibit
+•	kNkMAIDCapability_VignetteControl
+•	kNkMAIDCapability_MovieScreenSize
+•	kNkMAIDCapability_LiveViewAF
+•	kNkMAIDCapability_AutoDistortion
+•	kNkMAIDCapability_SceneMode
+•	kNkMAIDCapability_MovieRecMicrophone
+•	kNkMAIDCapability_MovieRecDestination
+•	kNkMAIDCapability_RemainCountInMedia
+•	kNkMAIDCapability_MovRecInCardStatus
+•	kNkMAIDCapability_MovRecInCardProhibit
+•	kNkMAIDCapability_ActiveSlot
+•	kNkMAIDCapability_SaveMedia
+•	kNkMAIDCapability_UserMode1
+•	kNkMAIDCapability_UserMode2
+•	kNkMAIDCapability_WBAutoType
+•	kNkMAIDCapability_EffectMode
+•	kNkMAIDCapability_HDRMode
+•	kNkMAIDCapability_HDRSmoothing
+•	kNkMAIDCapability_BlinkingStatus
+•	kNkMAIDCapability_WBPresetProtect1
+•	kNkMAIDCapability_WBPresetProtect2
+•	kNkMAIDCapability_WBPresetProtect3
+•	kNkMAIDCapability_WBPresetProtect4
+•	kNkMAIDCapability_WBPresetProtect5
+•	kNkMAIDCapability_WBPresetProtect6
+•	kNkMAIDCapability_ADLBracketingStep
+•	kNkMAIDCapability_CurrentItemID
+•	kNkMAIDCapability_SpotWBMode
+•	kNkMAIDCapability_MovieWindNoiseReduction
+•	kNkMAIDCapability_ISOControlSensitivity
+•	kNkMAIDCapability_MovieRecordingZone
+•	kNkMAIDCapability_MovieISOAutoHiLimit
+
+6.	Integer Capabilities:
+
+•	kNkMAIDCapability_BatteryLevel
+
+7.	Float Capabilities:
+
+•	kNkMAIDCapability_ExposureStatus
+•	kNkMAIDCapability_FocalLength
+•	kNkMAIDCapability_AngleLevel
+•	kNkMAIDCapability_AngleLevelPitch
+•	kNkMAIDCapability_AngleLevelYaw
+
+8.	Range Capabilities:
+
+•	kNkMAIDCapability_FlexibleProgram
+•	kNkMAIDCapability_ExposureComp
+•	kNkMAIDCapability_WBTuneAuto
+•	kNkMAIDCapability_WBTuneIncandescent
+•	kNkMAIDCapability_WBTuneFluorescent
+•	kNkMAIDCapability_WBTuneSunny
+•	kNkMAIDCapability_WBTuneFlash
+•	kNkMAIDCapability_WBTuneShade
+•	kNkMAIDCapability_WBTuneCloudy
+•	kNkMAIDCapability_InternalFlashComp
+•	kNkMAIDCapability_ExternalFlashComp
+•	kNkMAIDCapability_MFDriveStep
+•	kNkMAIDCapability_WBTuneColorAdjust
+•	kNkMAIDCapability_WBTunePreset1
+•	kNkMAIDCapability_WBTunePreset2
+•	kNkMAIDCapability_WBTunePreset3
+•	kNkMAIDCapability_WBTunePreset4
+•	kNkMAIDCapability_WBTunePreset5
+•	kNkMAIDCapability_WBTunePreset6
+•	kNkMAIDCapability_ISOAutoShutterTimeAutoValue
+•	kNkMAIDCapability_MovieRecMicrophoneValue
+•	kNkMAIDCapability_MovieExposureComp
+•	kNkMAIDCapability_WBTuneColorTempEx
+•	kNkMAIDCapability_MovieWBTuneAuto
+•	kNkMAIDCapability_MovieWBTuneIncandescent
+•	kNkMAIDCapability_MovieWBTuneFluorescent
+•	kNkMAIDCapability_MovieWBTuneSunny
+•	kNkMAIDCapability_MovieWBTuneShade
+•	kNkMAIDCapability_MovieWBTuneCloudy
+•	kNkMAIDCapability_MovieWBTuneColorTempEx
+•	kNkMAIDCapability_MovieWBTuneColorAdjust
+•	kNkMAIDCapability_MovieWBTunePreset1
+•	kNkMAIDCapability_MovieWBTunePreset2
+•	kNkMAIDCapability_MovieWBTunePreset3
+•	kNkMAIDCapability_MovieWBTunePreset4
+•	kNkMAIDCapability_MovieWBTunePreset5
+•	kNkMAIDCapability_MovieWBTunePreset6
+•	kNkMAIDCapability_MovieWBGainRed
+•	kNkMAIDCapability_MovieWBGainBlue
+
+9.	DateTime Capabilities:
+
+•	kNkMAIDCapability_ClockDateTime
+
+10.	Process Capabilities:
+
+•	kNkMAIDCapability_Capture
+•	kNkMAIDCapability_AutoFocus
+•	kNkMAIDCapability_PreCapture
+•	kNkMAIDCapability_ResetMenuBank
+•	kNkMAIDCapability_CaptureDustImage
+•	kNkMAIDCapability_AFCapture
+•	kNkMAIDCapability_DeleteDramImage
+•	kNkMAIDCapability_ResetWBMode
+•	kNkMAIDCapability_SpotWBMeasure
+•	kNkMAIDCapability_SpotWBResultDispEnd
+•	kNkMAIDCapability_TerminateCapture
+•	kNkMAIDCapability_MovieResetMenuBank
+•	kNkMAIDCapability_MovieResetWBMode
+
+11.	Generic Capabilities:
+
+•	kNkMAIDCapability_AcceptDiskAcquisition
+•	kNkMAIDCapability_WBPresetData
+•	kNkMAIDCapability_PictureControlData
+•	kNkMAIDCapability_GetPicCtrlInfo
+•	kNkMAIDCapability_PictureControlDataEx
+•	kNkMAIDCapability_MoviePictureControlData
+•	kNkMAIDCapability_MoviePictureControlDataEx
+•	kNkMAIDCapability_GetMoviePicCtrlInfo
+•	kNkMAIDCapability_MovieWBPresetData
+
+12.	Array Capabilities:
+
+•	kNkMAIDCapability_WBPresetName
+•	kNkMAIDCapability_GetLiveViewImage
+•	kNkMAIDCapability_MovieWBPresetName
+
+13.	Point Capabilities:
+
+•	kNkMAIDCapability_ContrastAFArea
+•	kNkMAIDCapability_SpotWBChangeArea
+
+To use these capabilities in your application, you can refer to the NikonDevice class in Nikon.cs and use methods like Get, Set, and Start to interact with these capabilities. For example, to capture an image, you can use the Capture method:
+
+public void Capture()
+{
+    Start(eNkMAIDCapability.kNkMAIDCapability_Capture);
+}

@@ -1,0 +1,1206 @@
+Id            : kNkMAIDCapability_ProgressProc
+Description   : Progress Proc
+Type          : kNkMAIDCapType_Callback
+
+
+Id            : kNkMAIDCapability_EventProc
+Description   : Event Proc
+Type          : kNkMAIDCapType_Callback
+
+
+Id            : kNkMAIDCapability_IsAlive
+Description   : Is Alive
+Type          : kNkMAIDCapType_Boolean
+Value         : True
+
+
+Id            : kNkMAIDCapability_Children
+Description   : Children
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_Name
+Description   : Name
+Type          : kNkMAIDCapType_String
+Value         : D750
+
+
+Id            : kNkMAIDCapability_Interface
+Description   : Interface
+Type          : kNkMAIDCapType_String
+Value         : USB
+
+
+Id            : kNkMAIDCapability_DataTypes
+Description   : Data Types
+Type          : kNkMAIDCapType_Unsigned
+Value         : 13
+
+
+Id            : kNkMAIDCapability_Capture
+Description   : Capture
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_AutoFocus
+Description   : Auto Focus
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_BatteryLevel
+Description   : Battery Level
+Type          : kNkMAIDCapType_Integer
+Value         : 100
+
+
+Id            : kNkMAIDCapability_FlashMode
+Description   : Flash Sync Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_AcceptDiskAcquisition
+Description   : Accept Disk Acquisition
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_EVInterval
+Description   : EV Steps for Exposure Control
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_PreCapture
+Description   : PreCapture
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_LockFocus
+Description   : Lock Focus
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_LockExposure
+Description   : Lock Exposure
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_ExposureStatus
+Description   : Exposure Status
+Type          : kNkMAIDCapType_Float
+
+
+Id            : kNkMAIDCapability_CompressionLevel
+Description   : Compression Level
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_ExposureMode
+Description   : Exposure Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_ShutterSpeed
+Description   : Shutter Speed
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_Aperture
+Description   : Aperture
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_FlexibleProgram
+Description   : Flexible Program
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_ExposureComp
+Description   : Exposure Comp.
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MeteringMode
+Description   : Metering Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 2
+
+
+Id            : kNkMAIDCapability_Sensitivity
+Description   : Sensitivity
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBMode
+Description   : White Balance Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBTuneAuto
+Description   : Auto
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTuneIncandescent
+Description   : Incandescent
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTuneFluorescent
+Description   : Fluorescent
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTuneSunny
+Description   : Sunny
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTuneFlash
+Description   : Flash
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTuneShade
+Description   : Shade
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTuneCloudy
+Description   : Cloudy
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_FocusMode
+Description   : Focus Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_FocusAreaMode
+Description   : Focus Area Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_FocusPreferredArea
+Description   : Focus Preferred Area
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_FocalLength
+Description   : Focal Length
+Type          : kNkMAIDCapType_Float
+
+
+Id            : kNkMAIDCapability_ClockDateTime
+Description   : Date and Time
+Type          : kNkMAIDCapType_DateTime
+
+
+Id            : kNkMAIDCapability_BracketingOrder
+Description   : Bracketing Order
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_BracketingVary
+Description   : Bracketing Vary
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_AFAreaSelector
+Description   : AF Area Selector
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_AFsPriority
+Description   : Single AF Area Priority
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_AFcPriority
+Description   : Continuous AF Area Priority
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_ApertureDial
+Description   : Change Aperture Setting via Sub-Command Dial
+Type          : kNkMAIDCapType_Boolean
+Value         : True
+
+
+Id            : kNkMAIDCapability_ShootingLimit
+Description   : Continuous Shooting Limit
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_LockCamera
+Description   : Lock Camera operation
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_LensInfo
+Description   : Focal length and Minimum F number
+Type          : kNkMAIDCapType_String
+Value         : 24-70/F2.8G
+
+
+Id            : kNkMAIDCapability_UserComment
+Description   : User Comment
+Type          : kNkMAIDCapType_String
+Value         : AV1                                 
+
+
+Id            : kNkMAIDCapability_WBPresetNumber
+Description   : White Balance Preset Number
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_SensitivityInterval
+Description   : Sensitivity Interval
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_ImageSize
+Description   : Image Size
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBGainRed
+Description   : White Balance Gain Red
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBGainBlue
+Description   : White Balance Gain Blue
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_IsoControl
+Description   : ISO Control
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_NoiseReduction
+Description   : Noise Reduction
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_InternalSplMode
+Description   : Internal Spl Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_EnableComment
+Description   : Enable Comment
+Type          : kNkMAIDCapType_Boolean
+Value         : True
+
+
+Id            : kNkMAIDCapability_ResetMenuBank
+Description   : Reset Menu Bank
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_ShootingMode
+Description   : Shooting Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_LockFV
+Description   : FV Lock
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_RemainContinuousShooting
+Description   : Remain Continuous Shooting Count
+Type          : kNkMAIDCapType_Unsigned
+Value         : 10
+
+
+Id            : kNkMAIDCapability_WBPresetName
+Description   : WB Preset Name
+Type          : kNkMAIDCapType_Array
+
+
+Id            : kNkMAIDCapability_FmmManual
+Description   : Fmm Manual
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_F0Manual
+Description   : F0 Manual
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_FlashSyncTime
+Description   : Flash Sync Time
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBPresetData
+Description   : White balance Preset Data
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_ContinuousShootingNum
+Description   : Continuous Shooting Num
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_EnableBracketing
+Description   : Enable Bracketing
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_BracketingType
+Description   : Bracketing Type
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_AEBracketingStep
+Description   : Auto Exposure Bracketing Step
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBBracketingStep
+Description   : White balance Bracketing Step
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_BracketingCount
+Description   : Bracketing Count
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_CameraInclination
+Description   : Camera Inclination
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_CaptureDustImage
+Description   : Capture Dust Removal Reference Image
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_ExternalFlashSort
+Description   : External Flash Sort
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_ExternalNewTypeFlashMode
+Description   : External New Type Flash Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_InternalFlashStatus
+Description   : Internal Flash Status
+Type          : kNkMAIDCapType_Unsigned
+Value         : 2
+
+
+Id            : kNkMAIDCapability_ExternalFlashStatus
+Description   : Flash Status
+Type          : kNkMAIDCapType_Unsigned
+Value         : 2
+
+
+Id            : kNkMAIDCapability_InternalFlashComp
+Description   : Internal Flash Comp
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_ExternalFlashComp
+Description   : External Flash Comp
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_AFMode
+Description   : AF Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ISOAutoShutterTime
+Description   : ISO Auto Shutter Time
+Type          : kNkMAIDCapType_Unsigned
+Value         : 32
+
+
+Id            : kNkMAIDCapability_CameraInclinationMode
+Description   : Camera Inclination Mode
+Type          : kNkMAIDCapType_Boolean
+Value         : True
+
+
+Id            : kNkMAIDCapability_CCDDataMode
+Description   : CCD Data Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_JpegCompressionPolicy
+Description   : Jpeg Compression Policy
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_CameraType
+Description   : Camera Type
+Type          : kNkMAIDCapType_Unsigned
+Value         : 59
+
+
+Id            : kNkMAIDCapability_NoiseReductionHighISO
+Description   : Noise Reduction High ISO
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_ImageColorSpace
+Description   : Image Color Space
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ISOAutoHiLimit
+Description   : ISO Auto Hi Limit
+Type          : kNkMAIDCapType_Unsigned
+Value         : 29
+
+
+Id            : kNkMAIDCapability_AFCapture
+Description   : AF Capture
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_InfoDisplayErrStatus
+Description   : Information Display Error Status
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_Slot2ImageSaveMode
+Description   : Slot2 Image Save Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_CompressRAWBitMode
+Description   : Compress RAW  Bit Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_PictureControl
+Description   : Picture Control
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_Active_D_Lighting
+Description   : Active D Lighting
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_LiveViewStatus
+Description   : Live View Status
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_LiveViewImageZoomRate
+Description   : Live View Image Zoom Rate
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_ContrastAF
+Description   : Contrast AF
+Type          : kNkMAIDCapType_Unsigned
+Value         : 16
+
+
+Id            : kNkMAIDCapability_DeleteDramImage
+Description   : Delete Dram Image
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_GetLiveViewImage
+Description   : Get Live View Image
+Type          : kNkMAIDCapType_Array
+
+
+Id            : kNkMAIDCapability_MFDriveStep
+Description   : MFDrive Step
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MFDrive
+Description   : MFDrive
+Type          : kNkMAIDCapType_Unsigned
+
+
+Id            : kNkMAIDCapability_ContrastAFArea
+Description   : Contrast AF Area
+Type          : kNkMAIDCapType_Point
+
+
+Id            : kNkMAIDCapability_CompressRAWEx
+Description   : Compress RAW data
+Type          : kNkMAIDCapType_Unsigned
+Value         : 2
+
+
+Id            : kNkMAIDCapability_WBFluorescentType
+Description   : WB Fluorescent Type
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_WBTuneColorAdjust
+Description   : WB Tune Color Adjustment
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTunePreset1
+Description   : WB Tune Preset1
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTunePreset2
+Description   : WB Tune Preset2
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTunePreset3
+Description   : WB Tune Preset3
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTunePreset4
+Description   : WB Tune Preset4
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBTunePreset5
+Description   : WB Tune Preset5
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_AFAreaPoint
+Description   : AF Area Point
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ManualSetLensNo
+Description   : Manual Set Lens No
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_AutoDXCrop
+Description   : Auto DX Crop
+Type          : kNkMAIDCapType_Boolean
+Value         : True
+
+
+Id            : kNkMAIDCapability_PictureControlData
+Description   : Picture Control Data
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_GetPicCtrlInfo
+Description   : Get PicCtrl Info
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_DeleteCustomPictureControl
+Description   : Delete Custom Picture Control
+Type          : kNkMAIDCapType_Unsigned
+
+
+Id            : kNkMAIDCapability_LensType
+Description   : Lens Type
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1048593
+
+
+Id            : kNkMAIDCapability_ChangedPictureControl
+Description   : Changed Picture Control
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_LiveViewProhibit
+Description   : Live View Prohibit
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_VignetteControl
+Description   : Vignette Control
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_EnableCopyright
+Description   : Enable Copyright
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_ArtistName
+Description   : Artist Name
+Type          : kNkMAIDCapType_String
+Value         : 
+
+
+Id            : kNkMAIDCapability_CopyrightInfo
+Description   : Copyright Information
+Type          : kNkMAIDCapType_String
+Value         : 
+
+
+Id            : kNkMAIDCapability_AngleLevel
+Description   : Angle Level
+Type          : kNkMAIDCapType_Float
+
+
+Id            : kNkMAIDCapability_MovieScreenSize
+Description   : Movie Screen Size
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_LiveViewAF
+Description   : Live View AF
+Type          : kNkMAIDCapType_Unsigned
+Value         : 2
+
+
+Id            : kNkMAIDCapability_AutoDistortion
+Description   : Auto Distortion
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_SceneMode
+Description   : Scene Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 18
+
+
+Id            : kNkMAIDCapability_MovieRecMicrophone
+Description   : Movie Record Microphone
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieRecDestination
+Description   : Movie Record Destination
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ADLBracketingType
+Description   : ADL Bracketing Type
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_RemainCountInMedia
+Description   : Remain Count In Media
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1470
+
+
+Id            : kNkMAIDCapability_AngleLevelPitch
+Description   : AngleLevel Pitch
+Type          : kNkMAIDCapType_Float
+
+
+Id            : kNkMAIDCapability_AngleLevelYaw
+Description   : AngleLevel Yaw
+Type          : kNkMAIDCapType_Float
+
+
+Id            : kNkMAIDCapability_MovRecInCardStatus
+Description   : Movie Record In Card Status
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovRecInCardProhibit
+Description   : Movie Record In Card Prohibit
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ActiveSlot
+Description   : Active Slot
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_SaveMedia
+Description   : Save Media
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_UserMode1
+Description   : User Mode1
+Type          : kNkMAIDCapType_Unsigned
+Value         : 22
+
+
+Id            : kNkMAIDCapability_UserMode2
+Description   : User Mode2
+Type          : kNkMAIDCapType_Unsigned
+Value         : 22
+
+
+Id            : kNkMAIDCapability_AFModeAtLiveView
+Description   : AF Mode At Live View
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBAutoType
+Description   : WB Auto Type
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_TerminateCapture
+Description   : Terminate Capture
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_EffectMode
+Description   : Effect Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 6
+
+
+Id            : kNkMAIDCapability_HDRMode
+Description   : HDR Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_HDRSmoothing
+Description   : HDR Smoothing
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_BlinkingStatus
+Description   : Blinking Status
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_WBTuneColorTempEx
+Description   : WBTune Color Temp Ex
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBPresetProtect1
+Description   : WBPreset Protect1
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_WBPresetProtect2
+Description   : WBPreset Protect2
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_WBPresetProtect3
+Description   : WBPreset Protect3
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_WBPresetProtect4
+Description   : WBPreset Protect4
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ISOAutoShutterTimeAutoValue
+Description   : ISO Auto Shutter Time Auto Value
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieImageQuality
+Description   : Movie Image Quality
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_MovieRecMicrophoneValue
+Description   : Movie Rec Microphone Value
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_LiveViewExposurePreview
+Description   : Live View Exposure Preview
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_LiveViewSelector
+Description   : Live View Selector
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieShutterSpeed
+Description   : Movie Shutter Speed
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieAperture
+Description   : Movie Aperture
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieSensitivity
+Description   : Movie Sensitivity
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieExposureComp
+Description   : Movie Exposure Comp.
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_ADLBracketingStep
+Description   : ADL Bracketing Step
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_ResetWBMode
+Description   : Reset WBMode
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_MovieReleaseButton
+Description   : Movie Release Button
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_CurrentItemID
+Description   : Current ItemID
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_LiveViewImageSize
+Description   : Live View Image Size
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_WBTunePreset6
+Description   : WB Tune Preset6
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_WBPresetProtect5
+Description   : WBPreset Protect5
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_WBPresetProtect6
+Description   : WBPreset Protect6
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_SpotWBMode
+Description   : Spot WB Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_SpotWBMeasure
+Description   : Spot WB Measure
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_SpotWBChangeArea
+Description   : Spot WB Change Area
+Type          : kNkMAIDCapType_Point
+
+
+Id            : kNkMAIDCapability_SpotWBResultDispEnd
+Description   : Spot WB Result Disp End
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_MovieWindNoiseReduction
+Description   : Movie Wind Noise Reduction
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_RetractableLensWarningStatus
+Description   : Retractable Lens Warning Status
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_ISOControlSensitivity
+Description   : ISO Control Sensitivity
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1250
+
+
+Id            : kNkMAIDCapability_MovieRecordingZone
+Description   : Movie Recording Zone
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieISOControl
+Description   : Movie ISO Control
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_MovieISOAutoHiLimit
+Description   : Movie ISO Auto Hi Limit
+Type          : kNkMAIDCapType_Unsigned
+Value         : 24
+
+
+Id            : kNkMAIDCapability_RawJpegTransferStatus
+Description   : Raw+Jpeg Transfer Status
+Type          : kNkMAIDCapType_Boolean
+Value         : False
+
+
+Id            : kNkMAIDCapability_PictureControlDataEx
+Description   : Picture Control DataEx
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_MovieWBMode
+Description   : Movie White Balance Mode
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieWBTuneAuto
+Description   : Movie WB Tune Auto
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBAutoType
+Description   : Movie WB Auto Type
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBTuneIncandescent
+Description   : Movie WB Tune Incandesent
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBFluorescentType
+Description   : Movie WB Fluorescent Type
+Type          : kNkMAIDCapType_Unsigned
+Value         : 3
+
+
+Id            : kNkMAIDCapability_MovieWBTuneFluorescent
+Description   : Movie WB Fluorescent
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTuneSunny
+Description   : Movie WB Tune Sunny
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTuneShade
+Description   : Movie WB Tune Shade
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTuneCloudy
+Description   : Movie WB Tune Cloudy
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTuneColorTempEx
+Description   : Movie WBTune Color Temp Ex
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTuneColorAdjust
+Description   : Movie WB Tune Color Adjustment
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTunePreset1
+Description   : Movie WB Tune Preset1
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTunePreset2
+Description   : Movie WB Tune Preset2
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTunePreset3
+Description   : Movie WB Tune Preset3
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTunePreset4
+Description   : Movie WB Tune Preset4
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTunePreset5
+Description   : Movie WB Tune Preset5
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBTunePreset6
+Description   : Movie WB Tune Preset6
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBPresetProtect1
+Description   : Movie WBPreset Protect1
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBPresetProtect2
+Description   : Movie WBPreset Protect2
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBPresetProtect3
+Description   : Movie WBPreset Protect3
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBPresetProtect4
+Description   : Movie WBPreset Protect4
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBPresetProtect5
+Description   : Movie WBPreset Protect5
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBPresetProtect6
+Description   : Movie WBPreset Protect6
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieWBPresetNumber
+Description   : White Balance Preset Number
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieWBPresetName
+Description   : WB Preset Name
+Type          : kNkMAIDCapType_Array
+
+
+Id            : kNkMAIDCapability_MovieWBGainRed
+Description   : Movie White Balance Gain Red
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MovieWBGainBlue
+Description   : Movie White Balance Gain Blue
+Type          : kNkMAIDCapType_Range
+
+
+Id            : kNkMAIDCapability_MoviePictureControlData
+Description   : Movie Picture Control Data
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_MoviePictureControlDataEx
+Description   : Movie Picture Control DataEx
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_MovieResetMenuBank
+Description   : Movie Reset Menu Bank
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_MovieCCDDataMode
+Description   : Movie CCD Data Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_MovieAutoDXCrop
+Description   : Movie Auto DX Crop
+Type          : kNkMAIDCapType_Boolean
+Value         : True
+
+
+Id            : kNkMAIDCapability_MovieNoiseReductionHighISO
+Description   : Movie Noise Reduction High ISO
+Type          : kNkMAIDCapType_Unsigned
+Value         : 1
+
+
+Id            : kNkMAIDCapability_MoviePictureControl
+Description   : Movie Picture Control
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_ChangedMoviePictureControl
+Description   : Changed Movie Picture Control
+Type          : kNkMAIDCapType_Enum
+
+
+Id            : kNkMAIDCapability_MovieResetWBMode
+Description   : Movie Reset WBMode
+Type          : kNkMAIDCapType_Process
+
+
+Id            : kNkMAIDCapability_MovieMeteringMode
+Description   : Movie Metering Mode
+Type          : kNkMAIDCapType_Unsigned
+Value         : 0
+
+
+Id            : kNkMAIDCapability_GetMoviePicCtrlInfo
+Description   : Get Movie PicCtrl Info
+Type          : kNkMAIDCapType_Generic
+
+
+Id            : kNkMAIDCapability_DeleteMovieCustomPictureControl
+Description   : Delete Movie Custom Picture Control
+Type          : kNkMAIDCapType_Unsigned
+
+
+Id            : kNkMAIDCapability_MovieWBPresetData
+Description   : Movie White balance Preset Data
+Type          : kNkMAIDCapType_Generic

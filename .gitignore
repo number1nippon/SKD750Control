@@ -1,0 +1,15 @@
+# Build outputs
+bin/
+obj/
+
+# Logs
+app.log
+error_log.txt
+
+# VS files
+.vs/
+.vscode/
+
+# User-specific
+*.user
+*.suo

@@ -1,0 +1,209 @@
+# Nikon D750 Capabilities (Merged, Deduplicated)
+# Source: CameraCapabilities.txt, D750Capabilities.txt, D750Capabilities2.txt
+# Note: Lines consolidated and duplicate entries removed.
+
+ID: kNkMAIDCapability_ProgressProc, Description: Progress Proc, Type: kNkMAIDCapType_Callback, Operations: 6
+ID: kNkMAIDCapability_EventProc, Description: Event Proc, Type: kNkMAIDCapType_Callback, Operations: 6
+ID: kNkMAIDCapability_IsAlive, Description: Is Alive, Type: kNkMAIDCapType_Boolean, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_Children, Description: Children, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_Name, Description: Name, Type: kNkMAIDCapType_String, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_Interface, Description: Interface, Type: kNkMAIDCapType_String, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_DataTypes, Description: Data Types, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_Capture, Description: Capture, Type: kNkMAIDCapType_Process, Operations: kNkMAIDCapOperation_Start
+ID: kNkMAIDCapability_AutoFocus, Description: Auto Focus, Type: kNkMAIDCapType_Process, Operations: 0
+ID: kNkMAIDCapability_BatteryLevel, Description: Battery Level, Type: kNkMAIDCapType_Integer, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_FlashMode, Description: Flash Sync Mode, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_AcceptDiskAcquisition, Description: Accept Disk Acquisition, Type: kNkMAIDCapType_Generic, Operations: 6
+ID: kNkMAIDCapability_EVInterval, Description: EV Steps for Exposure Control, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_PreCapture, Description: PreCapture, Type: kNkMAIDCapType_Process, Operations: 0
+ID: kNkMAIDCapability_LockFocus, Description: Lock Focus, Type: kNkMAIDCapType_Boolean, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_LockExposure, Description: Lock Exposure, Type: kNkMAIDCapType_Boolean, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ExposureStatus, Description: Exposure Status, Type: kNkMAIDCapType_Float, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_CompressionLevel, Description: Compression Level, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_ExposureMode, Description: Exposure Mode, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_ShutterSpeed, Description: Shutter Speed, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_Aperture, Description: Aperture, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_FlexibleProgram, Description: Flexible Program, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ExposureComp, Description: Exposure Comp., Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MeteringMode, Description: Metering Mode, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_Sensitivity, Description: Sensitivity, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_WBMode, Description: White Balance Mode, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_WBTuneAuto, Description: Auto, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTuneIncandescent, Description: Incandescent, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTuneFluorescent, Description: Fluorescent, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTuneSunny, Description: Sunny, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTuneFlash, Description: Flash, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTuneShade, Description: Shade, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTuneCloudy, Description: Cloudy, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_FocusMode, Description: Focus Mode, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_FocusAreaMode, Description: Focus Area Mode, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_FocusPreferredArea, Description: Focus Preferred Area, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_FocalLength, Description: Focal Length, Type: kNkMAIDCapType_Float, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ClockDateTime, Description: Date and Time, Type: kNkMAIDCapType_DateTime, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_BracketingOrder, Description: Bracketing Order, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_BracketingVary, Description: Bracketing Vary, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_AFAreaSelector, Description: AF Area Selector, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_AFsPriority, Description: Single AF Area Priority, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_AFcPriority, Description: Continuous AF Area Priority, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_ApertureDial, Description: Change Aperture Setting via Sub-Command Dial, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_ShootingLimit, Description: Continuous Shooting Limit, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_LockCamera, Description: Lock Camera operation, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_LensInfo, Description: Focal length and Minimum F number, Type: kNkMAIDCapType_String, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_UserComment, Description: User Comment, Type: kNkMAIDCapType_String, Operations: 6
+ID: kNkMAIDCapability_WBPresetNumber, Description: White Balance Preset Number, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_SensitivityInterval, Description: Sensitivity Interval, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_ImageSize, Description: Image Size, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_WBGainRed, Description: White Balance Gain Red, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_WBGainBlue, Description: White Balance Gain Blue, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_IsoControl, Description: ISO Control, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_NoiseReduction, Description: Noise Reduction, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_InternalSplMode, Description: Internal Spl Mode, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_EnableComment, Description: Enable Comment, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_ResetMenuBank, Description: Reset Menu Bank, Type: kNkMAIDCapType_Process, Operations: 0
+ID: kNkMAIDCapability_ShootingMode, Description: Shooting Mode, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_LockFV, Description: FV Lock, Type: kNkMAIDCapType_Boolean, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_RemainContinuousShooting, Description: Remain Continuous Shooting Count, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_WBPresetName, Description: WB Preset Name, Type: kNkMAIDCapType_Array, Operations: 14
+ID: kNkMAIDCapability_FmmManual, Description: Fmm Manual, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_F0Manual, Description: F0 Manual, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_FlashSyncTime, Description: Flash Sync Time, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_WBPresetData, Description: White balance Preset Data, Type: kNkMAIDCapType_Generic, Operations: 6
+ID: kNkMAIDCapability_ContinuousShootingNum, Description: Continuous Shooting Num, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_EnableBracketing, Description: Enable Bracketing, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_BracketingType, Description: Bracketing Type, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_AEBracketingStep, Description: Auto Exposure Bracketing Step, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_WBBracketingStep, Description: White balance Bracketing Step, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_BracketingCount, Description: Bracketing Count, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_CameraInclination, Description: Camera Inclination, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_CaptureDustImage, Description: Capture Dust Removal Reference Image, Type: kNkMAIDCapType_Process, Operations: 0
+ID: kNkMAIDCapability_ExternalFlashSort, Description: External Flash Sort, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ExternalNewTypeFlashMode, Description: External New Type Flash Mode, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_InternalFlashStatus, Description: Internal Flash Status, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ExternalFlashStatus, Description: Flash Status, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_InternalFlashComp, Description: Internal Flash Comp, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ExternalFlashComp, Description: External Flash Comp, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_AFMode, Description: AF Mode, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_ISOAutoShutterTime, Description: ISO Auto Shutter Time, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_CameraInclinationMode, Description: Camera Inclination Mode, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_CCDDataMode, Description: CCD Data Mode, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_JpegCompressionPolicy, Description: Jpeg Compression Policy, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_CameraType, Description: Camera Type, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_NoiseReductionHighISO, Description: Noise Reduction High ISO, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_ImageColorSpace, Description: Image Color Space, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_ISOAutoHiLimit, Description: ISO Auto Hi Limit, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_AFCapture, Description: AF Capture, Type: kNkMAIDCapType_Process, Operations: 0
+ID: kNkMAIDCapability_InfoDisplayErrStatus, Description: Information Display Error Status, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_Slot2ImageSaveMode, Description: Slot2 Image Save Mode, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_CompressRAWBitMode, Description: Compress RAW  Bit Mode, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_PictureControl, Description: Picture Control, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_Active_D_Lighting, Description: Active D Lighting, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_LiveViewStatus, Description: Live View Status, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_LiveViewImageZoomRate, Description: Live View Image Zoom Rate, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_ContrastAF, Description: Contrast AF, Type: kNkMAIDCapType_Unsigned, Operations: 6
+ID: kNkMAIDCapability_DeleteDramImage, Description: Delete Dram Image, Type: kNkMAIDCapType_Process, Operations: kNkMAIDCapOperation_Start
+ID: kNkMAIDCapability_GetLiveViewImage, Description: Get Live View Image, Type: kNkMAIDCapType_Array, Operations: 10
+ID: kNkMAIDCapability_MFDriveStep, Description: MFDrive Step, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MFDrive, Description: MFDrive, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Set
+ID: kNkMAIDCapability_ContrastAFArea, Description: Contrast AF Area, Type: kNkMAIDCapType_Point, Operations: kNkMAIDCapOperation_Set
+ID: kNkMAIDCapability_CompressRAWEx, Description: Compress RAW data, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBFluorescentType, Description: WB Fluorescent Type, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBTuneColorAdjust, Description: WB Tune Color Adjustment, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBTunePreset1, Description: WB Tune Preset1, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_WBTunePreset2, Description: WB Tune Preset2, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_WBTunePreset3, Description: WB Tune Preset3, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_WBTunePreset4, Description: WB Tune Preset4, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_WBTunePreset5, Description: WB Tune Preset5, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_AFAreaPoint, Description: AF Area Point, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_ManualSetLensNo, Description: Manual Set Lens No, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_AutoDXCrop, Description: Auto DX Crop, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_PictureControlData, Description: Picture Control Data, Type: kNkMAIDCapType_Generic, Operations: 22
+ID: kNkMAIDCapability_GetPicCtrlInfo, Description: Get PicCtrl Info, Type: kNkMAIDCapType_Generic, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_DeleteCustomPictureControl, Description: Delete Custom Picture Control, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Set
+ID: kNkMAIDCapability_LensType, Description: Lens Type, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ChangedPictureControl, Description: Changed Picture Control, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_LiveViewProhibit, Description: Live View Prohibit, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_VignetteControl, Description: Vignette Control, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_EnableCopyright, Description: Enable Copyright, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_ArtistName, Description: Artist Name, Type: kNkMAIDCapType_String, Operations: 6
+ID: kNkMAIDCapability_CopyrightInfo, Description: Copyright Information, Type: kNkMAIDCapType_String, Operations: 6
+ID: kNkMAIDCapability_AngleLevel, Description: Angle Level, Type: kNkMAIDCapType_Float, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieScreenSize, Description: Movie Screen Size, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_LiveViewAF, Description: Live View AF, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_AutoDistortion, Description: Auto Distortion, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_SceneMode, Description: Scene Mode, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_MovieRecMicrophone, Description: Movie Record Microphone, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieRecDestination, Description: Movie Record Destination, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_ADLBracketingType, Description: ADL Bracketing Type, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_RemainCountInMedia, Description: Remain Count In Media, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_AngleLevelPitch, Description: AngleLevel Pitch, Type: kNkMAIDCapType_Float, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_AngleLevelYaw, Description: AngleLevel Yaw, Type: kNkMAIDCapType_Float, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovRecInCardStatus, Description: Movie Record In Card Status, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_MovRecInCardProhibit, Description: Movie Record In Card Prohibit, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ActiveSlot, Description: Active Slot, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_SaveMedia, Description: Save Media, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_UserMode1, Description: User Mode1, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_UserMode2, Description: User Mode2, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_AFModeAtLiveView, Description: AF Mode At Live View, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_WBAutoType, Description: WB Auto Type, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_TerminateCapture, Description: Terminate Capture, Type: kNkMAIDCapType_Generic, Operations: 0
+ID: kNkMAIDCapability_EffectMode, Description: Effect Mode, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_HDRMode, Description: HDR Mode, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_HDRSmoothing, Description: HDR Smoothing, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_BlinkingStatus, Description: Blinking Status, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_WBTuneColorTempEx, Description: WBTune Color Temp Ex, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_WBPresetProtect1, Description: WBPreset Protect1, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBPresetProtect2, Description: WBPreset Protect2, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBPresetProtect3, Description: WBPreset Protect3, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBPresetProtect4, Description: WBPreset Protect4, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBPresetProtect5, Description: WBPreset Protect5, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_WBPresetProtect6, Description: WBPreset Protect6, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_ISOAutoShutterTimeAutoValue, Description: ISO Auto Shutter Time Auto Value, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieImageQuality, Description: Movie Image Quality, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieRecMicrophoneValue, Description: Movie Rec Microphone Value, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_LiveViewExposurePreview, Description: Live View Exposure Preview, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_LiveViewSelector, Description: Live View Selector, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_MovieShutterSpeed, Description: Movie Shutter Speed, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_MovieAperture, Description: Movie Aperture, Type: kNkMAIDCapType_Enum, Operations: 10
+ID: kNkMAIDCapability_MovieSensitivity, Description: Movie Sensitivity, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_MovieExposureComp, Description: Movie Exposure Comp., Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_ADLBracketingStep, Description: ADL Bracketing Step, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_ResetWBMode, Description: Reset WBMode, Type: kNkMAIDCapType_Process, Operations: kNkMAIDCapOperation_Start
+ID: kNkMAIDCapability_MovieReleaseButton, Description: Movie Release Button, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_CurrentItemID, Description: Current ItemID, Type: kNkMAIDCapType_Unsigned, Operations: 6
+ID: kNkMAIDCapability_LiveViewImageSize, Description: Live View Image Size, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_WBTunePreset6, Description: WB Tune Preset6, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_SpotWBMode, Description: Spot WB Mode, Type: kNkMAIDCapType_Unsigned, Operations: 18
+ID: kNkMAIDCapability_SpotWBMeasure, Description: Spot WB Measure, Type: kNkMAIDCapType_Process, Operations: 0
+ID: kNkMAIDCapability_SpotWBChangeArea, Description: Spot WB Change Area, Type: kNkMAIDCapType_Point, Operations: 0
+ID: kNkMAIDCapability_SpotWBResultDispEnd, Description: Spot WB Result Disp End, Type: kNkMAIDCapType_Process, Operations: kNkMAIDCapOperation_Start
+ID: kNkMAIDCapability_MovieWindNoiseReduction, Description: Movie Wind Noise Reduction, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_RetractableLensWarningStatus, Description: Retractable Lens Warning Status, Type: kNkMAIDCapType_Boolean, Operations: 18
+ID: kNkMAIDCapability_ISOControlSensitivity, Description: ISO Control Sensitivity, Type: kNkMAIDCapType_Unsigned, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieRecordingZone, Description: Movie Recording Zone, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieISOControl, Description: Movie ISO Control, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_MovieISOAutoHiLimit, Description: Movie ISO Auto Hi Limit, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_RawJpegTransferStatus, Description: Raw+Jpeg Transfer Status, Type: kNkMAIDCapType_Boolean, Operations: 22
+ID: kNkMAIDCapability_PictureControlDataEx, Description: Picture Control DataEx, Type: kNkMAIDCapType_Generic, Operations: 22
+ID: kNkMAIDCapability_MovieWBMode, Description: Movie White Balance Mode, Type: kNkMAIDCapType_Enum, Operations: 14
+ID: kNkMAIDCapability_MovieWBTuneAuto, Description: Movie WB Tune Auto, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBAutoType, Description: Movie WB Auto Type, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBTuneIncandescent, Description: Movie WB Tune Incandesent, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBFluorescentType, Description: Movie WB Fluorescent Type, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBTuneFluorescent, Description: Movie WB Fluorescent, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBTuneSunny, Description: Movie WB Tune Sunny, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBTuneShade, Description: Movie WB Tune Shade, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBTuneCloudy, Description: Movie WB Tune Cloudy, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBTuneColorTempEx, Description: Movie WBTune Color Temp Ex, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBTuneColorAdjust, Description: Movie WB Tune Color Adjustment, Type: kNkMAIDCapType_Range, Operations: 6
+ID: kNkMAIDCapability_MovieWBTunePreset1, Description: Movie WB Tune Preset1, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieWBTunePreset2, Description: Movie WB Tune Preset2, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieWBTunePreset3, Description: Movie WB Tune Preset3, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieWBTunePreset4, Description: Movie WB Tune Preset4, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieWBTunePreset5, Description: Movie WB Tune Preset5, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieWBTunePreset6, Description: Movie WB Tune Preset6, Type: kNkMAIDCapType_Range, Operations: kNkMAIDCapOperation_Get
+ID: kNkMAIDCapability_MovieWBPresetProtect1, Description: Movie WBPreset Protect1, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBPresetProtect2, Description: Movie WBPreset Protect2, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBPresetProtect3, Description: Movie WBPreset Protect3, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBPresetProtect4, Description: Movie WBPreset Protect4, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBPresetProtect5, Description: Movie WBPreset Protect5, Type: kNkMAIDCapType_Unsigned, Operations: 22
+ID: kNkMAIDCapability_MovieWBPresetProtect6, Description: Movie WBPreset Protect6, Type: kNkMAIDCapType_Unsigned, Operations: 22

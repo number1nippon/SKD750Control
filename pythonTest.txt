@@ -7,9 +7,7 @@ import re
 
 # ==================================================
 # D750 LIVEVIEW CONTROLLER
-# VERSION 0.2.1
-#
-# Coordinate Transform Build
+# VERSION 0.3.0
 #
 # Features:
 # - Nikon D750 live view
@@ -21,6 +19,10 @@ import re
 # - D750 6016 x 4016 coordinate mapping
 # - Browser-size-independent click coordinates
 # - Orientation-aware coordinate transforms
+# - Shutter speed control
+# - Aperture control
+# - ISO control
+# - Exposure compensation control
 # ==================================================
 
 
@@ -250,6 +252,255 @@ def initialise_camera():
 
 
 # ==================================================
+# GENERIC CAMERA SETTING HELPERS
+# ==================================================
+
+def get_camera_widget(
+    config,
+    name
+):
+
+    widget = (
+        config.get_child_by_name(
+            name
+        )
+    )
+
+    if widget is None:
+
+        raise RuntimeError(
+            "Camera control not available: "
+            +
+            name
+        )
+
+    return widget
+
+
+def get_setting(
+    name
+):
+
+    config = camera.get_config()
+
+    widget = get_camera_widget(
+        config,
+        name
+    )
+
+    return widget
+
+
+def get_widget_choices(widget):
+
+    choices = []
+
+    try:
+
+        count = widget.count_choices()
+
+        for index in range(count):
+
+            choices.append(
+                widget.get_choice(
+                    index
+                )
+            )
+
+        return choices
+
+    except Exception:
+
+        pass
+
+
+    #
+    # Some versions/bindings expose
+    # the choices differently.
+    #
+
+    try:
+
+        choices = widget.get_choices()
+
+        if choices is not None:
+
+            return list(
+                choices
+            )
+
+    except Exception:
+
+        pass
+
+
+    return []
+
+
+def get_setting_state(
+    name
+):
+
+    config = camera.get_config()
+
+    widget = get_camera_widget(
+        config,
+        name
+    )
+
+    value = widget.get_value()
+
+    choices = get_widget_choices(
+        widget
+    )
+
+    return {
+        "value": str(value),
+        "choices": choices
+    }
+
+
+def change_choice_setting(
+    name,
+    direction
+):
+
+    config = camera.get_config()
+
+    widget = get_camera_widget(
+        config,
+        name
+    )
+
+    choices = get_widget_choices(
+        widget
+    )
+
+    if not choices:
+
+        raise RuntimeError(
+            "No choices available for "
+            +
+            name
+        )
+
+
+    current = str(
+        widget.get_value()
+    )
+
+
+    try:
+
+        current_index = (
+            choices.index(
+                current
+            )
+        )
+
+    except ValueError:
+
+        #
+        # Try matching by string representation.
+        #
+
+        current_index = -1
+
+        for index, choice in enumerate(
+            choices
+        ):
+
+            if str(choice) == current:
+
+                current_index = index
+
+                break
+
+
+    if current_index < 0:
+
+        raise RuntimeError(
+            "Current value '"
+            +
+            current
+            +
+            "' was not found in "
+            +
+            name
+            +
+            " choices"
+        )
+
+
+    new_index = (
+        current_index
+        +
+        direction
+    )
+
+
+    #
+    # Do not wrap around.
+    #
+
+    if new_index < 0:
+
+        new_index = 0
+
+    if new_index >= len(choices):
+
+        new_index = (
+            len(choices) - 1
+        )
+
+
+    new_value = choices[
+        new_index
+    ]
+
+
+    print(
+        "Changing",
+        name,
+        ":",
+        current,
+        "->",
+        new_value
+    )
+
+
+    widget.set_value(
+        new_value
+    )
+
+    camera.set_config(
+        config
+    )
+
+
+    #
+    # Read it back from the camera.
+    #
+
+    config = camera.get_config()
+
+    widget = get_camera_widget(
+        config,
+        name
+    )
+
+    actual = widget.get_value()
+
+
+    return {
+        "value": str(actual),
+        "choices": get_widget_choices(
+            widget
+        )
+    }
+
+
+# ==================================================
 # EXPOSURE PREVIEW
 # ==================================================
 
@@ -400,6 +651,185 @@ def exposure_preview_state():
 
 
 # ==================================================
+# EXPOSURE SETTINGS
+# ==================================================
+
+EXPOSURE_SETTINGS = {
+
+    "shutter": {
+        "widget": "shutterspeed",
+        "label": "Shutter"
+    },
+
+    "aperture": {
+        "widget": "f-number",
+        "label": "Aperture"
+    },
+
+    "iso": {
+        "widget": "iso",
+        "label": "ISO"
+    },
+
+    "exposure_compensation": {
+        "widget": "exposurecompensation",
+        "label": "Exposure Compensation"
+    }
+
+}
+
+
+def read_exposure_settings():
+
+    result = {}
+
+    config = camera.get_config()
+
+    for key, info in (
+        EXPOSURE_SETTINGS.items()
+    ):
+
+        try:
+
+            widget = get_camera_widget(
+                config,
+                info["widget"]
+            )
+
+            result[key] = {
+                "value": str(
+                    widget.get_value()
+                ),
+                "choices":
+                    get_widget_choices(
+                        widget
+                    )
+            }
+
+        except Exception as error:
+
+            result[key] = {
+                "value": None,
+                "choices": [],
+                "error": str(error)
+            }
+
+
+    return result
+
+
+@app.route(
+    "/exposure-settings"
+)
+def exposure_settings():
+
+    try:
+
+        with camera_lock:
+
+            settings = (
+                read_exposure_settings()
+            )
+
+        return jsonify(
+            {
+                "success": True,
+                "settings": settings
+            }
+        )
+
+    except Exception as error:
+
+        return jsonify(
+            {
+                "success": False,
+                "error": str(error)
+            }
+        ), 500
+
+
+@app.route(
+    "/exposure/<setting>/<direction>",
+    methods=["POST"]
+)
+def change_exposure_setting(
+    setting,
+    direction
+):
+
+    try:
+
+        if setting not in (
+            EXPOSURE_SETTINGS
+        ):
+
+            raise RuntimeError(
+                "Unknown exposure setting: "
+                +
+                setting
+            )
+
+
+        if direction not in (
+            "up",
+            "down"
+        ):
+
+            raise RuntimeError(
+                "Invalid direction"
+            )
+
+
+        step = (
+            1
+            if direction == "up"
+            else -1
+        )
+
+
+        info = (
+            EXPOSURE_SETTINGS[
+                setting
+            ]
+        )
+
+
+        with camera_lock:
+
+            result = (
+                change_choice_setting(
+                    info["widget"],
+                    step
+                )
+            )
+
+
+        return jsonify(
+            {
+                "success": True,
+                "setting": setting,
+                "value": result["value"],
+                "choices": result["choices"]
+            }
+        )
+
+
+    except Exception as error:
+
+        print(
+            "Exposure setting error:",
+            error
+        )
+
+        return jsonify(
+            {
+                "success": False,
+                "error": str(error)
+            }
+        ), 500
+
+
+# ==================================================
 # SHUTTER
 # ==================================================
 
@@ -478,7 +908,11 @@ def orientation():
 # CLICK TO FOCUS
 # ==================================================
 
-def clamp(value, minimum, maximum):
+def clamp(
+    value,
+    minimum,
+    maximum
+):
 
     return max(
         minimum,
@@ -496,15 +930,13 @@ def normalised_to_sensor(
 ):
 
     #
-    # normal_x / normal_y now represent
-    # coordinates in the ORIGINAL, UNROTATED
-    # 640 x 480 live-view frame.
+    # normal_x / normal_y represent
+    # coordinates in the ORIGINAL,
+    # UNROTATED 640 x 480 live-view frame.
     #
-    # The browser is responsible for undoing
-    # the display rotation before sending them.
+    # The browser reverses display rotation.
     #
-    # Therefore the mapping to the D750 sensor
-    # is direct for every orientation.
+    # Therefore the sensor mapping is direct.
     #
 
     sensor_x = int(
@@ -533,36 +965,6 @@ def normalised_to_sensor(
     )
 
 
-
-    #
-    # Nikon ChangeAfArea:
-    #
-    # 2 parameters
-    #
-    # X occupies the lower 16 bits.
-    # Y occupies the upper 16 bits.
-    #
-    # Result:
-    #
-    # 0xYYYYXXXX
-    #
-
-    packed = (
-        (sensor_y << 16)
-        |
-        sensor_x
-    )
-
-    return (
-        "0x"
-        +
-        format(
-            packed,
-            "x"
-        )
-    )
-
-
 def set_af_area(
     sensor_x,
     sensor_y
@@ -583,6 +985,7 @@ def set_af_area(
             "is not available"
         )
 
+
     value = (
         str(sensor_x)
         +
@@ -590,6 +993,7 @@ def set_af_area(
         +
         str(sensor_y)
     )
+
 
     print(
         "Setting AF area:"
@@ -610,14 +1014,17 @@ def set_af_area(
         value
     )
 
+
     widget.set_value(
         value
     )
+
 
     print(
         "  Widget value after set:",
         widget.get_value()
     )
+
 
     camera.set_config(
         config
@@ -641,9 +1048,11 @@ def drive_autofocus():
             "is not available"
         )
 
+
     print(
         "Driving autofocus."
     )
+
 
     widget.set_value(
         1
@@ -679,11 +1088,6 @@ def focus():
         )
 
 
-        #
-        # Normalised coordinates must
-        # remain inside the image.
-        #
-
         normal_x = clamp(
             normal_x,
             0.0,
@@ -697,30 +1101,20 @@ def focus():
         )
 
 
-        #
-        # Get current physical camera
-        # orientation.
-        #
-
         orientation = (
             get_camera_orientation()
         )
 
-
-        #
-        # Convert the displayed click
-        # into D750 sensor coordinates.
-        #
 
         sensor_x, sensor_y = (
             normalised_to_sensor(
                 normal_x,
                 normal_y,
                 orientation_degrees(
-            orientation
+                    orientation
+                )
+            )
         )
-    )
-)
 
 
         print(
@@ -777,6 +1171,7 @@ def focus():
                 )
             }
         )
+
 
     except Exception as error:
 
@@ -884,7 +1279,7 @@ def home():
 
 <head>
 
-<title>D750 Camera Control v0.2.1</title>
+<title>D750 Camera Control v0.3.0</title>
 
 <style>
 
@@ -985,7 +1380,11 @@ body {
 
     flex-direction: column;
 
-    gap: 10px;
+    gap: 8px;
+
+    max-height: 96vh;
+
+    overflow-y: auto;
 }
 
 
@@ -994,9 +1393,9 @@ body {
     width: 110px;
 
     padding:
-        15px 5px;
+        10px 5px;
 
-    font-size: 14px;
+    font-size: 13px;
 
     background: #222;
 
@@ -1034,12 +1433,118 @@ body {
 #shutterButton {
 
     background: #333;
+
+    padding:
+        15px 5px;
 }
 
 
 #shutterButton:hover {
 
     background: #555;
+}
+
+
+/* ----------------------------------------------
+   EXPOSURE CONTROL ROW
+   ---------------------------------------------- */
+
+.exposure-control {
+
+    display: grid;
+
+    grid-template-columns:
+        34px
+        1fr
+        34px;
+
+    gap: 3px;
+
+    width: 110px;
+}
+
+
+.exposure-control button {
+
+    padding: 8px 0;
+
+    font-size: 16px;
+
+    background: #222;
+
+    color: white;
+
+    border:
+        1px solid white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.exposure-control button:hover {
+
+    background: #444;
+}
+
+
+.exposure-control button:disabled {
+
+    opacity: 0.5;
+
+    cursor: wait;
+}
+
+
+.exposure-value {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding: 5px 2px;
+
+    background: #111;
+
+    color: white;
+
+    border:
+        1px solid #777;
+
+    border-radius: 5px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+}
+
+
+.control-label {
+
+    width: 110px;
+
+    color: white;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    text-align: center;
+
+    margin-top: 2px;
 }
 
 
@@ -1092,6 +1597,7 @@ body {
     max-width: 180px;
 }
 
+
 </style>
 
 </head>
@@ -1122,6 +1628,118 @@ body {
     Exposure Preview: ...
 
 </button>
+
+
+<div class="control-label">
+    SHUTTER SPEED
+</div>
+
+<div class="exposure-control">
+
+    <button
+        onclick="changeExposure('shutter', 'down')"
+    >
+        −
+    </button>
+
+    <div
+        id="shutterValue"
+        class="exposure-value"
+    >
+        ...
+    </div>
+
+    <button
+        onclick="changeExposure('shutter', 'up')"
+    >
+        +
+    </button>
+
+</div>
+
+
+<div class="control-label">
+    APERTURE
+</div>
+
+<div class="exposure-control">
+
+    <button
+        onclick="changeExposure('aperture', 'down')"
+    >
+        −
+    </button>
+
+    <div
+        id="apertureValue"
+        class="exposure-value"
+    >
+        ...
+    </div>
+
+    <button
+        onclick="changeExposure('aperture', 'up')"
+    >
+        +
+    </button>
+
+</div>
+
+
+<div class="control-label">
+    ISO
+</div>
+
+<div class="exposure-control">
+
+    <button
+        onclick="changeExposure('iso', 'down')"
+    >
+        −
+    </button>
+
+    <div
+        id="isoValue"
+        class="exposure-value"
+    >
+        ...
+    </div>
+
+    <button
+        onclick="changeExposure('iso', 'up')"
+    >
+        +
+    </button>
+
+</div>
+
+
+<div class="control-label">
+    EXPOSURE COMP.
+</div>
+
+<div class="exposure-control">
+
+    <button
+        onclick="changeExposure('exposure_compensation', 'down')"
+    >
+        −
+    </button>
+
+    <div
+        id="exposureCompensationValue"
+        class="exposure-value"
+    >
+        ...
+    </div>
+
+    <button
+        onclick="changeExposure('exposure_compensation', 'up')"
+    >
+        +
+    </button>
+
+</div>
 
 
 <button
@@ -1161,9 +1779,6 @@ let currentOrientation = null;
 /*
  * Focus position is stored as a percentage
  * of the actual visible image.
- *
- * This allows the focus box to remain
- * correctly positioned after browser resizing.
  */
 
 let focusNormalX = null;
@@ -1392,20 +2007,17 @@ function clickToFocus(
             "camera"
         );
 
+
     const rect =
         camera.getBoundingClientRect();
 
-
-    /*
-     * Coordinates of the click within the
-     * displayed image.
-     */
 
     let displayX =
         (
             event.clientX -
             rect.left
         ) / rect.width;
+
 
     let displayY =
         (
@@ -1425,11 +2037,6 @@ function clickToFocus(
     }
 
 
-    /*
-     * Convert displayed coordinates back into
-     * the ORIGINAL 640 x 480 live-view frame.
-     */
-
     let normalX;
     let normalY;
 
@@ -1440,9 +2047,6 @@ function clickToFocus(
 
         /*
          * 0° — LANDSCAPE
-         *
-         * This is the previously proven
-         * working mapping.
          */
 
         normalX =
@@ -1458,8 +2062,6 @@ function clickToFocus(
 
         /*
          * 270° — UPRIGHT PORTRAIT
-         *
-         * Reverse the portrait display rotation.
          */
 
         normalX =
@@ -1475,8 +2077,6 @@ function clickToFocus(
 
         /*
          * 90° — UPSIDE-DOWN PORTRAIT
-         *
-         * Inverse of the 270° transformation.
          */
 
         normalX =
@@ -1503,10 +2103,6 @@ function clickToFocus(
 
     } else {
 
-        /*
-         * Safety fallback.
-         */
-
         normalX =
             displayX;
 
@@ -1514,11 +2110,6 @@ function clickToFocus(
             displayY;
     }
 
-
-    /*
-     * Keep the focus box visually at the point
-     * where the user actually clicked.
-     */
 
     focusNormalX =
         displayX;
@@ -1781,6 +2372,199 @@ function toggleExposurePreview() {
 
 
 /* ----------------------------------------------
+   EXPOSURE CONTROLS
+   ---------------------------------------------- */
+
+function setExposureValue(
+    setting,
+    value
+) {
+
+    let elementId;
+
+
+    if (
+        setting === "shutter"
+    ) {
+
+        elementId =
+            "shutterValue";
+
+    } else if (
+        setting === "aperture"
+    ) {
+
+        elementId =
+            "apertureValue";
+
+    } else if (
+        setting === "iso"
+    ) {
+
+        elementId =
+            "isoValue";
+
+    } else if (
+        setting ===
+        "exposure_compensation"
+    ) {
+
+        elementId =
+            "exposureCompensationValue";
+    }
+
+
+    const element =
+        document.getElementById(
+            elementId
+        );
+
+
+    if (
+        element
+    ) {
+
+        element.innerText =
+            value;
+    }
+}
+
+
+function readExposureSettings() {
+
+    fetch(
+        "/exposure-settings",
+        {
+            cache:
+                "no-store"
+        }
+    )
+
+    .then(
+        response =>
+            response.json()
+    )
+
+    .then(
+        data => {
+
+            if (
+                !data.success
+            ) {
+
+                console.error(
+                    data.error
+                );
+
+                return;
+            }
+
+
+            const settings =
+                data.settings;
+
+
+            setExposureValue(
+                "shutter",
+                settings.shutter.value
+            );
+
+
+            setExposureValue(
+                "aperture",
+                settings.aperture.value
+            );
+
+
+            setExposureValue(
+                "iso",
+                settings.iso.value
+            );
+
+
+            setExposureValue(
+                "exposure_compensation",
+                settings.exposure_compensation.value
+            );
+
+        }
+    )
+
+    .catch(
+        error => {
+
+            console.error(
+                "Exposure settings:",
+                error
+            );
+
+        }
+    );
+}
+
+
+function changeExposure(
+    setting,
+    direction
+) {
+
+    fetch(
+        "/exposure/"
+        +
+        setting
+        +
+        "/"
+        +
+        direction,
+        {
+            method:
+                "POST"
+        }
+    )
+
+    .then(
+        response =>
+            response.json()
+    )
+
+    .then(
+        data => {
+
+            if (
+                data.success
+            ) {
+
+                setExposureValue(
+                    setting,
+                    data.value
+                );
+
+            } else {
+
+                console.error(
+                    "Exposure change:",
+                    data.error
+                );
+
+            }
+
+        }
+    )
+
+    .catch(
+        error => {
+
+            console.error(
+                "Exposure change:",
+                error
+            );
+
+        }
+    );
+}
+
+
+/* ----------------------------------------------
    SHUTTER
    ---------------------------------------------- */
 
@@ -1897,10 +2681,25 @@ readExposurePreviewState();
 
 readOrientation();
 
+readExposureSettings();
+
 
 setInterval(
     readOrientation,
     250
+);
+
+
+/*
+ * Refresh exposure values periodically.
+ *
+ * This is useful because settings may also
+ * be changed using the physical camera controls.
+ */
+
+setInterval(
+    readExposureSettings,
+    1000
 );
 
 

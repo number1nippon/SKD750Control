@@ -165,7 +165,7 @@ def camera_event_loop():
 
                 event_type, event_data = (
                     camera.wait_for_event(
-                        1
+                        10
                     )
                 )
 
@@ -196,11 +196,6 @@ def camera_event_loop():
                 "Camera event error:",
                 error
             )
-
-            time.sleep(
-                0.01
-            )
-
 
 # ==================================================
 # CAMERA INITIALISATION
@@ -534,35 +529,6 @@ def normalised_to_sensor(
 
 
 
-    #
-    # Nikon ChangeAfArea:
-    #
-    # 2 parameters
-    #
-    # X occupies the lower 16 bits.
-    # Y occupies the upper 16 bits.
-    #
-    # Result:
-    #
-    # 0xYYYYXXXX
-    #
-
-    packed = (
-        (sensor_y << 16)
-        |
-        sensor_x
-    )
-
-    return (
-        "0x"
-        +
-        format(
-            packed,
-            "x"
-        )
-    )
-
-
 def set_af_area(
     sensor_x,
     sensor_y
@@ -750,15 +716,23 @@ def focus():
         )
 
 
+        lock_start = time.monotonic()
+
         with camera_lock:
+
+            print(
+                "FOCUS LOCK WAIT:",
+                round(
+                    time.monotonic()
+                    -
+                    lock_start,
+                    3
+                )
+            )
 
             set_af_area(
                 sensor_x,
                 sensor_y
-            )
-
-            time.sleep(
-                0.1
             )
 
             drive_autofocus()
@@ -1169,6 +1143,14 @@ let currentOrientation = null;
 let focusNormalX = null;
 let focusNormalY = null;
 
+/*
+ * Used to ignore responses from older
+ * focus requests when the user clicks
+ * multiple times quickly.
+ */
+
+let focusRequestId = 0;
+
 
 /* ----------------------------------------------
    ORIENTATION
@@ -1386,6 +1368,8 @@ function positionFocusBox() {
 function clickToFocus(
     event
 ) {
+    const requestId =
+    ++focusRequestId;
 
     const camera =
         document.getElementById(
@@ -1575,6 +1559,14 @@ function clickToFocus(
         data => {
 
             if (
+                requestId !==
+                focusRequestId
+            ) {
+
+                return;
+            }
+
+            if (
                 data.success
             ) {
 
@@ -1621,6 +1613,14 @@ function clickToFocus(
 
     .catch(
         error => {
+
+            if (
+                requestId !==
+                focusRequestId
+            ) {
+
+                return;
+            }
 
             status.innerText =
                 "Focus error";
@@ -1900,7 +1900,7 @@ readOrientation();
 
 setInterval(
     readOrientation,
-    250
+    2000
 );
 
 
